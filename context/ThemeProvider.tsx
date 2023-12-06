@@ -7,22 +7,25 @@ interface ThemeContextType {
 }
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState("");
   const handleThemeChnage = () => {
-    if (mode === "dark") {
-      setMode("light");
-      document.documentElement.classList.add("light");
-    } else {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("prefers-color-scheme : dark").matches)
+    ) {
       setMode("dark");
       document.documentElement.classList.add("dark");
+    } else {
+      setMode("light");
+      document.documentElement.classList.remove("dark");
     }
   };
   useEffect(() => {
     handleThemeChnage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+  }, [mode]);
+  console.log("mode: ", mode);
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>
       {children}

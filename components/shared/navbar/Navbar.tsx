@@ -1,7 +1,9 @@
+"use client";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import Theme from "./Theme";
 
 type Props = {};
 
@@ -22,6 +24,7 @@ const Navbar = (props: Props) => {
       </Link>
       GlobalSearsh
       <div className="flex-between gap-5">
+        <Theme />
         <SignedIn>
           <UserButton
             appearance={{
