@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import Theme from "./Theme";
 import MobileNav from "./MobileNav";
+import GlobalSearch from "../search/GlobalSearch";
 
 type Props = {};
 
@@ -23,7 +24,7 @@ const Navbar = (props: Props) => {
           <span className="text-primary-500"> Overflow</span>
         </p>
       </Link>
-      GlobalSearsh
+      <GlobalSearch />
       <div className="flex-between gap-5">
         <Theme />
         <SignedIn>
