@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Theme from "./Theme";
+import MobileNav from "./MobileNav";
 
 type Props = {};
 
@@ -38,6 +39,7 @@ const Navbar = (props: Props) => {
             afterSignOutUrl="/"
           />
         </SignedIn>
+        <MobileNav />
       </div>
     </nav>
   );

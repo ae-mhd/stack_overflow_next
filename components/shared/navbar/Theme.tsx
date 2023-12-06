@@ -9,9 +9,7 @@ import {
 } from "@/components/ui/menubar";
 import { themes } from "@/constants";
 
-type Props = {};
-
-const Theme = (props: Props) => {
+const Theme = () => {
   const { mode, setMode } = useTheme();
   return (
     <Menubar className="relative border-none bg-transparent shadow-none">
