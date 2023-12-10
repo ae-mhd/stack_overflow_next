@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const HomeFilters = (props: Props) => {
+const HomeFilters = () => {
   return <div>HomeFilters</div>;
 };
 
